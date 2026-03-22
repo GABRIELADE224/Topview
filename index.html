@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Topview Private School | Excellence · Integrity · Innovation · Culture · Career</title>
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <meta name="description" content="Topview Private School: Raising future leaders through excellence and integrity. Celebrate our Culture Day and Career Day, where students explore heritage and future professions.">
+    <meta name="keywords" content="private school, academic excellence, nursery, primary, secondary, Obafemi Owode, ICT learning, culture day, career day">
+    <meta name="author" content="Topview Private School">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #0a3b7a;
+            --secondary-blue: #053463;
+            --light-blue: #a1a9b0;
+            --accent-blue: #0a1f34;
+            --white: #e9eaf0;
+            --off-white: #f1f4f6;
+            --gray-600: #4b5563;
+            --shadow-sm: 0 8px 20px rgba(0,40,80,0.06);
+            --nav-height: 70px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--white);
+            color: #1e2a41;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            background: #e2ecfe;
+        }
+
+        /* ── CONTAINER ─────────────────────────────── */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── NAVBAR ────────────────────────────────── */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,32,64,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            /* Required so mobile-menu (position:absolute) is anchored to the navbar */
+            isolation: isolate;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            flex-shrink: 0;
+        }
+        .logo-icon {
+            background: var(--primary-blue);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(10,59,122,0.2);
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .logo-text h2 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--secondary-blue);
+            display: block;
+            font-weight: 400;
+        }
+
+        /* Desktop nav links */
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 3px;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        /* Hamburger button */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            transition: background 0.2s;
+            z-index: 1100;
+        }
+        .menu-btn:hover { background: rgba(10,59,122,0.08); }
+
+        /* Mobile drawer */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--white);
+            padding: 1.2rem 1.5rem 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,32,64,0.1);
+            border-top: 1px solid rgba(10,59,122,0.08);
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            right: 0;
+            z-index: 999;
+            gap: 0;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(10,59,122,0.06);
+            transition: color 0.2s;
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+        .mobile-menu a:hover { color: var(--primary-blue); }
+
+        /* ── BUTTONS ───────────────────────────────── */
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(10,59,122,0.15);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: var(--primary-blue); color: white; }
+        .btn:hover { background: var(--secondary-blue); transform: translateY(-2px); }
+
+        /* ── HERO SLIDER ───────────────────────────── */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 520px;
+            max-height: 820px;
+            overflow: hidden;
+            background: #0a1f34;
+        }
+
+        /* Track */
+        .slider-container {
+            display: flex;
+            height: 100%;
+            transition: transform 0.85s cubic-bezier(0.77,0,0.175,1);
+        }
+
+        /* Each slide = full viewport */
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Background image with ken-burns */
+        .slide-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .slide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.08);
+            transition: transform 6s ease;
+        }
+        .slide.active .slide-img img { transform: scale(1); }
+
+        /* Dark gradient overlay */
+        .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(5,20,50,0.82) 0%,
+                rgba(5,20,50,0.45) 50%,
+                rgba(5,20,50,0.15) 100%
+            );
+            z-index: 1;
+        }
+
+        /* Text content on top of overlay */
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 5rem);
+            padding-bottom: clamp(4rem, 8vw, 7rem);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease;
+        }
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide badge / label */
+        .slide-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .slide-content h1 {
+            font-size: clamp(1.8rem, 5vw, 3.4rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .slide-content p {
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            color: rgba(255,255,255,0.85);
+            max-width: 520px;
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+        }
+
+        /* CTA buttons inside slide — white versions */
+        .slide-content .btn {
+            background: white;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .slide-content .btn:hover { background: #e8f0fe; transform: translateY(-2px); }
+        .slide-content .btn-outline {
+            border-color: rgba(255,255,255,0.7);
+            color: white;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .slide-content .btn-outline:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ── Prev / Next arrows ── */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.2s, transform 0.2s;
+            user-select: none;
+        }
+        .slider-arrow:hover { background: rgba(255,255,255,0.28); transform: translateY(-50%) scale(1.1); }
+        .slider-arrow.prev { left: clamp(10px, 2.5vw, 30px); }
+        .slider-arrow.next { right: clamp(10px, 2.5vw, 30px); }
+
+        /* ── Dots ── */
+        .slider-dots {
+            position: absolute;
+            bottom: 1.5rem;
+            right: clamp(1.5rem, 4vw, 4rem);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 0;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: width 0.3s, background 0.3s;
+            border: none;
+        }
+        .dot.active {
+            width: 28px;
+            border-radius: 4px;
+            background: white;
+        }
+
+        /* ── Progress bar ── */
+        .slider-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: rgba(255,255,255,0.25);
+            width: 100%;
+            z-index: 10;
+        }
+        .slider-progress-bar {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width linear;
+        }
+
+        /* ── Slide counter ── */
+        .slide-counter {
+            position: absolute;
+            top: clamp(1.2rem, 3vw, 2rem);
+            right: clamp(1.5rem, 4vw, 4rem);
+            z-index: 10;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .slide-counter span { color: white; font-size: 1.1rem; }
+
+        /* ── SECTIONS ──────────────────────────────── */
+        .section { padding: clamp(3rem, 7vw, 5rem) 0; }
+        .section-light { background: var(--off-white); }
+
+        .section-title {
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .section-sub {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── GRIDS ─────────────────────────────────── */
+        .highlights-grid, .values-grid, .program-grid, .facility-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.8rem 1.3rem;
+            border-radius: 22px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.15s;
+            border: 1px solid rgba(30,91,191,0.1);
+            text-align: center;
+        }
+        .card:hover { transform: translateY(-4px); }
+        .card i { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 0.8rem; }
+        .card h3 { margin-bottom: 0.4rem; font-weight: 600; font-size: 1rem; }
+        .card p { font-size: 0.9rem; color: var(--gray-600); }
+
+        /* ── PHOTO CARDS ────────────────────────────── */
+        .photo-card {
+            background: var(--white);
+            border-radius: 22px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(30,91,191,0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(10,59,122,0.15);
+        }
+        .photo-card-img {
+            width: 100%;
+            height: 155px;
+            object-fit: cover;
+            display: block;
+            background: #c8daf5;
+        }
+        .photo-card-body {
+            padding: 1rem 1.1rem 1.2rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+        .photo-card-body i {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.2rem;
+        }
+        .photo-card-body h3,
+        .photo-card-body h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e2a41;
+            margin: 0;
+        }
+        .photo-card-body p {
+            font-size: 0.82rem;
+            color: var(--gray-600);
+            line-height: 1.45;
+            margin: 0;
+        }
+        .program-photo-card .photo-card-img { height: 185px; }
+        .facility-photo-card .photo-card-img { height: 165px; }
+
+        /* ── TWO-COL ───────────────────────────────── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .principal-card {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 22px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        /* ── CTA BUTTONS ───────────────────────────── */
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        /* ── TESTIMONIALS ──────────────────────────── */
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: #2d3954;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        /* ── CONTACT ───────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .contact-info p { margin-bottom: 0.6rem; }
+        .form-group { margin-bottom: 1.1rem; }
+        input, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #dae2ed;
+            border-radius: 40px;
+            font-size: 1rem;
+            background: var(--white);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        textarea {
+            border-radius: 22px;
+            resize: vertical;
+            min-height: 130px;
+        }
+        .map-wrapper {
+            margin: 1.5rem 0;
+        }
+        .map-container {
+            border-radius: 22px;
+            overflow: hidden;
+            height: 260px;
+            background: #e3ecf7;
+            box-shadow: 0 8px 24px rgba(10,59,122,0.12);
+            border: 3px solid white;
+            outline: 2px solid rgba(10,59,122,0.1);
+        }
+        .map-container iframe { display: block; }
+        .map-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            cursor: pointer;
+        }
+        .map-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .map-btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+        .map-btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        /* ── NEWS / EVENTS ─────────────────────────── */
+        .event-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .gallery-img {
+            background: #bed5f0;
+            height: 130px;
+            border-radius: 16px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .event-item {
+            display: flex;
+            gap: 1.2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        .event-date {
+            background: var(--primary-blue);
+            color: white;
+            min-width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* ── EVENTS HIGHLIGHT GRID ─────────────────── */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        .culture-card, .career-card, .execution-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f2f9ff 100%);
+            border-radius: 40px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(10,59,122,0.12);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .culture-card:hover, .career-card:hover, .execution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -8px rgba(10,59,122,0.18);
+        }
+        .event-badge {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.45rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+        .event-badge i { margin-right: 6px; }
+        .event-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin: 0.2rem 0 0.6rem;
+        }
+        .event-title small {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 400;
+            color: var(--secondary-blue);
+            display: block;
+        }
+        .event-quote {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 600;
+            color: #0f2c51;
+            margin: 0.8rem 0 1.2rem;
+            font-style: italic;
+        }
+        .event-grid-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            margin-top: 1.2rem;
+        }
+        .event-img {
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 12px 22px -6px rgba(0,30,70,0.25);
+            border: 3px solid white;
+            height: 220px;
+            position: relative;
+        }
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .event-img:hover img { transform: scale(1.06); }
+        .event-story {
+            background: rgba(255,255,255,0.65);
+            backdrop-filter: blur(4px);
+            padding: 1.3rem;
+            border-radius: 24px;
+            border-left: 5px solid var(--primary-blue);
+        }
+        .event-story p { font-size: 0.98rem; line-height: 1.65; color: #1e293b; }
+        .event-story strong { color: var(--primary-blue); font-weight: 700; }
+
+        /* ── FOOTER ────────────────────────────────── */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer p { color: #c6daff; margin-bottom: 0.4rem; font-size: 0.95rem; }
+        .footer h3 { color: white; margin-bottom: 0.6rem; }
+        .footer a { color: #d9e9ff; text-decoration: none; }
+        /* ── SOCIAL ICONS (footer) ─────────── */
+        .social-icons { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem; }
+        .social-icons a {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            text-decoration: none;
+        }
+        .social-icons a:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 10px 24px rgba(0,0,0,0.35); filter: brightness(1.1); }
+        .social-icons a.fb { background: #1877F2; }
+        .social-icons a.ig { background: linear-gradient(135deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); }
+        .social-icons a.wa { background: #25D366; }
+        .social-item { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
+        .social-item span { font-size: 0.7rem; color: #c6daff; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; }
+
+        /* ── FLOATING SOCIAL BAR ───────────── */
+        .float-social {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .float-social a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            color: white;
+            text-decoration: none;
+            padding: 12px 14px;
+            transition: padding-right 0.25s, box-shadow 0.25s;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .float-social a i { font-size: 1.35rem; flex-shrink: 0; }
+        .float-social a .fl-label {
+            max-width: 0;
+            overflow: hidden;
+            transition: max-width 0.3s ease, opacity 0.3s;
+            opacity: 0;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .float-social a:hover .fl-label { max-width: 90px; opacity: 1; }
+        .float-social a:hover { padding-right: 18px; box-shadow: -4px 0 18px rgba(0,0,0,0.22); }
+        .float-social a.fl-fb { background: #1877F2; border-radius: 12px 0 0 0; }
+        .float-social a.fl-ig { background: linear-gradient(180deg,#f09433,#dc2743,#bc1888); }
+        .float-social a.fl-wa { background: #25D366; border-radius: 0 0 0 12px; }
+        @media (max-width: 600px) { .float-social a .fl-label { display: none; } }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2460b0;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            color: #c6daff;
+            font-size: 0.88rem;
+        }
+
+        /* ── RESPONSIVE BREAKPOINTS ────────────────── */
+
+        /* Tablet (≤900px) */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+
+            .two-col { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .event-grid-inner { grid-template-columns: 1fr; }
+
+            .event-img { height: 200px; }
+            .event-gallery { grid-template-columns: repeat(2, 1fr); }
+
+            .slide-content { max-width: 100%; }
+            .slider-arrow { width: 40px; height: 40px; font-size: 0.95rem; }
+        }
+
+        /* Mobile (≤600px) */
+        @media (max-width: 600px) {
+            .container { padding: 0 16px; }
+
+            .logo-text h2 { font-size: 1.2rem; }
+            .logo-text span { display: none; }
+
+            .highlights-grid,
+            .values-grid,
+            .program-grid { grid-template-columns: 1fr 1fr; }
+
+            .facility-grid { grid-template-columns: 1fr 1fr; }
+
+            .testimonial-grid { grid-template-columns: 1fr; }
+
+            .event-gallery { grid-template-columns: repeat(2, 1fr); }
+            .gallery-img { height: 100px; }
+
+            .culture-card, .career-card, .execution-card {
+                border-radius: 28px;
+                padding: 1.5rem;
+            }
+
+            .event-img { height: 170px; }
+
+            .btn { padding: 11px 22px; font-size: 0.95rem; }
+
+            .principal-card { padding: 1.3rem; }
+
+            .footer-inner { flex-direction: column; gap: 1.5rem; }
+        }
+
+        /* Small phones (≤400px) */
+        @media (max-width: 400px) {
+            .highlights-grid,
+            .values-grid,
+            .program-grid,
+            .facility-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVBAR ─────────────────────────────────────── -->
+    <nav class="navbar" style="position:sticky; overflow:visible;">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logo.jpg" alt="TopView School Logo">
+                </div>
+                <div class="logo-text">
+                    <h2>TOPVIEW</h2>
+                    <span>private school · est. 2016</span>
+                </div>
+            </div>
+
+            <!-- Desktop links -->
+            <div class="nav-links" id="desktopNav">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#facilities">Facilities</a>
+                <a href="#events">Events</a>
+                <a href="#execution">Execution</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile drawer -->
+        <div class="mobile-menu" id="mobileMenu" role="navigation">
+            <a href="#home" onclick="closeMenu()">🏠 Home</a>
+            <a href="#about" onclick="closeMenu()">ℹ️ About</a>
+            <a href="#academics" onclick="closeMenu()">📚 Academics</a>
+            <a href="#facilities" onclick="closeMenu()">🏫 Facilities</a>
+            <a href="#events" onclick="closeMenu()">🎉 Events</a>
+            <a href="#execution" onclick="closeMenu()">⚡ Execution</a>
+            <a href="#news" onclick="closeMenu()">📰 News</a>
+            <a href="#contact" onclick="closeMenu()">📞 Contact</a>
+        </div>
+    </nav>
+
+    <!-- ── HOME / HERO ─────────────────────────────────── -->
+    <section id="home">
+        <div class="hero-slider">
+
+            <!-- Slide counter -->
+            <div class="slide-counter" id="slideCounter"><span>1</span> / 3</div>
+
+            <!-- Prev / Next arrows -->
+            <button class="slider-arrow prev" onclick="currentSlide(slideIndex - 1)" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow next" onclick="currentSlide(slideIndex + 1)" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Slides track -->
+            <div class="slider-container" id="slider">
+
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-img">
+                        <img src="classroom.jpg" alt="Students learning in a bright classroom" loading="eager">
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-badge">🎓 Welcome to Topview</div>
+                        <h1>Raising Future Leaders Through Excellence and Integrity</h1>
+                        <p>Where academic excellence meets moral discipline and innovation.</p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn">Contact Us</a>
+                            <a href="#about" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="sci.jpg" alt="Students working in science laboratory" loading="lazy">
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-badge">🔬 Academics</div>
+                        <h1>Science &amp; Innovation Lab</h1>
+                        <p>Hands-on experiments and ICT-based learning for every child.</p>
+                        <div class="cta-buttons">
+                            <a href="#academics" class="btn">Our Programs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="play.jpg" alt="Children playing on modern playground" loading="lazy">
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-badge">⚽ Holistic Development</div>
+                        <h1>A Happy, Safe Playground for Every Child</h1>
+                        <p>Safe environment, sports, and holistic development for well-rounded growth.</p>
+                        <div class="cta-buttons">
+                            <a href="#facilities" class="btn">Our Facilities</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.slider-container -->
+
+            <!-- Dot indicators -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="slider-progress">
+                <div class="slider-progress-bar" id="progressBar"></div>
+            </div>
+
+        </div><!-- /.hero-slider -->
+
+        <!-- Intro + highlights -->
+        <div class="container section">
+            <div class="two-col">
+                <div>
+                    <h2 class="section-title">Excellence · Integrity · Growth</h2>
+                    <p style="font-size:clamp(1rem,2.5vw,1.2rem)">Topview Private School is dedicated to shaping future leaders through a blend of academic rigour, moral discipline, and innovation. Our holistic approach nurtures every child's potential.</p>
+                </div>
+                <div class="highlights-grid" style="grid-template-columns:1fr 1fr;">
+                    <div class="photo-card">
+                        <img class="photo-card-img" src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=480&q=80" alt="Qualified Teachers">
+                        <div class="photo-card-body"><i class="fas fa-chalkboard-teacher"></i><h3>Qualified Teachers</h3></div>
+                    </div>
+                    <div class="photo-card">
+                        <img class="photo-card-img" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=480&q=80" alt="Modern Facilities">
+                        <div class="photo-card-body"><i class="fas fa-flask"></i><h3>Modern Facilities</h3></div>
+                    </div>
+                    <div class="photo-card">
+                        <img class="photo-card-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=480&q=80" alt="Safe Learning">
+                        <div class="photo-card-body"><i class="fas fa-shield-alt"></i><h3>Safe Learning</h3></div>
+                    </div>
+                    <div class="photo-card">
+                        <img class="photo-card-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=480&q=80" alt="ICT-Based Learning">
+                        <div class="photo-card-body"><i class="fas fa-laptop-code"></i><h3>ICT-Based</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ───────────────────────────────────────── -->
+    <section id="about" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">About Topview</h2>
+            <div class="two-col">
+                <div>
+                    <h3 style="margin-bottom:0.8rem">History &amp; Mission</h3>
+                    <p>Founded in 2016, Topview Private School started with 15 students and a vision to create a centre of excellence.</p>
+                    <p style="margin-top:0.8rem"><strong>Mission:</strong> To be one of the global institutions that produce world-class quality education with technology, innovative ideals, and skills development.</p>
+                    <p style="margin-top:0.8rem"><strong>Vision:</strong> To be the leading light in holistic education, raising generations that transform society.</p>
+                    <div class="values-grid" style="margin-top:2rem; grid-template-columns: repeat(2,1fr);">
+                        <div class="photo-card">
+                            <img class="photo-card-img" src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=480&q=80" alt="Excellence">
+                            <div class="photo-card-body"><i class="fas fa-star"></i><h4>Excellence</h4></div>
+                        </div>
+                        <div class="photo-card">
+                            <img class="photo-card-img" src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=480&q=80" alt="Discipline">
+                            <div class="photo-card-body"><i class="fas fa-hand-holding-heart"></i><h4>Discipline</h4></div>
+                        </div>
+                        <div class="photo-card">
+                            <img class="photo-card-img" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=480&q=80" alt="Leadership">
+                            <div class="photo-card-body"><i class="fas fa-flag"></i><h4>Leadership</h4></div>
+                        </div>
+                        <div class="photo-card">
+                            <img class="photo-card-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=480&q=80" alt="Innovation">
+                            <div class="photo-card-body"><i class="fas fa-lightbulb"></i><h4>Innovation</h4></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="principal-card">
+                        <h3 style="margin-bottom:0.7rem">Message from Director</h3>
+                        <p>"At Topview, we believe every child is a leader. Our dedicated staff and supportive parents make our community thrive. Together we build character and academic excellence." — Mr. Bamidele, Director.</p>
+                    </div>
+                    <div style="margin-top:1.5rem; background: white; border-radius: 24px; padding:1.5rem;">
+                        <h4 style="margin-bottom:0.8rem">🏆 Achievements</h4>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+                            <li><i class="fas fa-trophy" style="color:var(--primary-blue); margin-right:0.5rem;"></i> Best Private School, Lagos Education Awards 2023</li>
+                            <li><i class="fas fa-medal" style="color:var(--primary-blue); margin-right:0.5rem;"></i> 95% pass rate in national exams (top 1%)</li>
+                            <li><i class="fas fa-robot" style="margin-right:0.5rem;"></i> National Robotics Competition winners 2024</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ACADEMICS ───────────────────────────────────── -->
+    <section id="academics" class="section">
+        <div class="container">
+            <h2 class="section-title">Academics &amp; Programs</h2>
+            <div class="program-grid">
+                <div class="photo-card program-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=480&q=80" alt="Nursery play-based learning">
+                    <div class="photo-card-body"><i class="fas fa-baby"></i><h3>Nursery</h3><p>Play-based learning, early literacy &amp; numeracy</p></div>
+                </div>
+                <div class="photo-card program-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=480&q=80" alt="Primary school learning">
+                    <div class="photo-card-body"><i class="fas fa-child"></i><h3>Primary</h3><p>Strong foundation, critical thinking, ICT</p></div>
+                </div>
+                <div class="photo-card program-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=480&q=80" alt="Secondary school sciences and arts">
+                    <div class="photo-card-body"><i class="fas fa-user-graduate"></i><h3>Secondary</h3><p>Sciences, arts, tech &amp; leadership track</p></div>
+                </div>
+            </div>
+            <div style="margin-top:2.5rem; background: var(--light-blue); border-radius: 26px; padding:1.8rem;">
+                <h3 style="margin-bottom:0.8rem">Co-curricular &amp; Performance</h3>
+                <p><i class="fas fa-futbol" style="margin-right:0.4rem;"></i> Sports, Debate, Robotics, Music, Drama</p>
+                <p style="margin-top:0.5rem"><i class="fas fa-chart-line" style="margin-right:0.4rem;"></i> 96% of students excel in higher secondary placements. Consistently above national average.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FACILITIES ──────────────────────────────────── -->
+    <section id="facilities" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="facility-grid">
+                <div class="photo-card facility-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=480&q=80" alt="Smart Classrooms">
+                    <div class="photo-card-body"><i class="fas fa-door-open"></i><h3>Smart Classrooms</h3><p>Airy, tech-enabled, and safe</p></div>
+                </div>
+                <div class="photo-card facility-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=480&q=80" alt="Science Lab">
+                    <div class="photo-card-body"><i class="fas fa-microscope"></i><h3>Science Lab</h3><p>Fully equipped for physics, chemistry, biology</p></div>
+                </div>
+                <div class="photo-card facility-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=480&q=80" alt="Computer Lab">
+                    <div class="photo-card-body"><i class="fas fa-desktop"></i><h3>Computer Lab</h3><p>ICT-based learning, coding club</p></div>
+                </div>
+                <div class="photo-card facility-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=480&q=80" alt="Library">
+                    <div class="photo-card-body"><i class="fas fa-book-open"></i><h3>Library</h3><p>8,000+ books &amp; e‑resources</p></div>
+                </div>
+                <div class="photo-card facility-photo-card">
+                    <img class="photo-card-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=480&q=80" alt="Sports Field">
+                    <div class="photo-card-body"><i class="fas fa-basketball"></i><h3>Sports Field</h3><p>Football, athletics, basketball court</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EVENTS (CULTURE + CAREER DAY) ──────────────── -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Signature Celebrations</h2>
+            <div class="highlight-grid">
+                <!-- CULTURE DAY -->
+                <div class="culture-card">
+                    <span class="event-badge"><i class="fas fa-drum"></i> TPS Culture Day</span>
+                    <div class="event-title">TOPVIEW <small>PRIVATE SCHOOLS</small></div>
+                    <div class="event-quote">— TOPVIEW <small style="font-size:0.95rem;">...soaring to the top</small></div>
+                    <div class="event-grid-inner">
+                        <div class="event-img">
+                            <img src="culture.jpg" alt="Topview cultural day celebration – colourful attire" loading="lazy">
+                        </div>
+                        <div class="event-story">
+                            <p><strong>Our culture... Our pride</strong> — Every year, Topview comes alive with colour, rhythm, and tradition. Students, teachers, and families celebrate our rich heritage through music, dance, art, and storytelling. At TPS, we don't just teach history — we live it.</p>
+                            <p style="margin-top:0.8rem"><i class="fas fa-heart" style="color:var(--primary-blue)"></i> <strong>Unity, heritage, pride.</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CAREER DAY -->
+                <div class="career-card">
+                    <span class="event-badge"><i class="fas fa-briefcase"></i> TPS Career Day</span>
+                    <div class="event-title">DREAM BIG <small>shape your future</small></div>
+                    <div class="event-quote">— TOPVIEW <small style="font-size:0.95rem;">...soaring to the top</small></div>
+                    <div class="event-grid-inner">
+                        <div class="event-img">
+                          <img src="ceerer.jpg" alt="">
+                        </div>
+                        <div class="event-story">
+                            <p><strong>Today's dreamers, tomorrow's leaders.</strong> Career Day at Topview opens young minds to a world of possibilities — from doctors to engineers, entrepreneurs to astronauts. With excellence and integrity, any career is within reach.</p>
+                            <p style="margin-top:0.8rem"><i class="fas fa-rocket" style="color:var(--primary-blue)"></i> <strong>Explore, aspire, achieve.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EXECUTION ───────────────────────────────────── -->
+    <section id="execution" class="section section-light">
+        <div class="container">
+            <div class="execution-card" style="max-width:960px; margin:0 auto;">
+                <span class="event-badge"><i class="fas fa-tasks"></i> Excellence in Action</span>
+                <div class="event-title">FOCUS · EXECUTE · EXCEL</div>
+                <div class="event-quote">— turning potential into performance —</div>
+                <div class="event-grid-inner" style="grid-template-columns: 1.2fr 0.9fr;">
+                    <div class="event-img" style="height: 900px;">
+                        <img src="excultion.jpg" alt="">
+                    </div>
+                    <div class="event-story" style="border-left-color:#0a3b7a;">
+                        <p><strong>Ideas become reality through execution.</strong> At Topview, we teach that excellence is not just about dreaming — it's about doing. Our students learn to set goals, work diligently, and follow through with precision and discipline. Every assignment, every experiment, every debate is a chance to practise the art of getting things done.</p>
+                        <p style="margin-top:0.8rem"><i class="fas fa-bolt" style="color:var(--primary-blue)"></i> <strong>Plan · Act · Succeed.</strong> That's the Topview way.</p>
+                    </div>
+                </div>
+                <div style="margin-top:1.8rem; background:rgba(10,59,122,0.04); border-radius:26px; padding:1.6rem; text-align:center;">
+                    <p style="font-size:clamp(0.95rem,2vw,1.15rem)"><i class="fas fa-quote-left" style="color:var(--primary-blue);opacity:0.4;margin-right:8px;"></i> Excellence is not an accident — it is the result of high intention, sincere effort, and intelligent execution. <i class="fas fa-quote-right" style="color:var(--primary-blue);opacity:0.4;margin-left:8px;"></i></p>
+                    <p style="margin-top:0.5rem;font-size:0.9rem;">— Our daily motto in every classroom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEWS & EVENTS ───────────────────────────────── -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2 class="section-title">News &amp; Events</h2>
+            <div class="event-gallery">
+                <img src="sport.jpg" class="gallery-img" alt="Sports day" loading="lazy">
+                <img src="ground.jpg" class="gallery-img" alt="School ground" loading="lazy">
+                <img src="mis.jpg" class="gallery-img" alt="Graduation" loading="lazy">
+                <img src="oldschool.jpg" class="gallery-img" alt="School building" loading="lazy">
+            </div>
+            <div class="event-item">
+                <div class="event-date">11<br>March</div>
+                <div><h3>Culture Day</h3><p>Join us for our annual Culture Day celebrations.</p></div>
+            </div>
+            <div class="event-item">
+                <div class="event-date">28<br>JUN</div>
+                <div><h3>Graduation &amp; Prize-giving Day</h3><p>Celebrating our outstanding learners.</p></div>
+            </div>
+            <div style="background: var(--light-blue); padding: 1.5rem; border-radius: 26px; margin-top: 1.5rem;">
+                <h3 style="margin-bottom:0.6rem">📅 Upcoming Activities</h3>
+                <p>• Parent-teacher conference: June 12</p>
+                <p>• Club Day: March 20</p>
+                <p>• Vocational Day: March 18</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ────────────────────────────────── -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">What Parents &amp; Students Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Good day everyone. I want to sincerely appreciate TOPVIEW PRIVATE SCHOOL 🏫🎒 for the solid academic foundation my child received while we were in Nigeria. Since relocating to the UK, she has been doing very well in her studies, and it is clear that the training and knowledge she gained at TOPVIEW prepared her for this new environment. Thank you to the management and teachers for your dedication to building a strong future for the children. God bless TOPVIEW."</p>
+                    <div class="testimonial-footer">
+                        <div><strong>Mrs. Olowoyo</strong> <span style="color:var(--gray-600); font-size:0.9rem;">(parent)</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Hello everyone, I would like to sincerely appreciate TOPVIEW PRIVATE SCHOOL 🏫🎒 for the great academic foundation my daughter received while we were in Nigeria. Since we relocated to the UK, she has been doing very well in her school work. It is very clear that the quality teaching at TOPVIEW prepared her well for this new environment. Thank you and God bless TOPVIEW PRIVATE SCHOOL."</p>
+                    <div class="testimonial-footer">
+                        <div><strong>Mrs. Badejo</strong> <span style="color:var(--gray-600); font-size:0.9rem;">(parent)</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Discipline and excellence — you see it in every student."</p>
+                    <div class="testimonial-footer">
+                        <div><strong>Chidi</strong> <span style="color:var(--gray-600); font-size:0.9rem;">(alumni)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ─────────────────────────────────────── -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-headset" style="color:var(--primary-blue); margin-right:0.6rem;"></i>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <!-- Location card -->
+                    <div style="background:white; border-radius:20px; padding:1.3rem 1.5rem; margin-bottom:1.2rem; border-left:5px solid var(--primary-blue); box-shadow:var(--shadow-sm);">
+                        <p style="font-weight:700; color:var(--primary-blue); margin-bottom:0.8rem; font-size:1.05rem;">
+                            <i class="fas fa-school" style="margin-right:0.5rem;"></i> Topview Private School
+                        </p>
+                        <p style="margin-bottom:0.7rem; display:flex; align-items:flex-start; gap:0.6rem;">
+                            <span style="background:rgba(10,59,122,0.08); border-radius:8px; width:2rem; height:2rem; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <i class="fas fa-map-marker-alt" style="color:var(--primary-blue);"></i>
+                            </span>
+                            <span>No 1 Grace Spring Avenue, Charity Estate, Ofada, Ogun State</span>
+                        </p>
+                        <p style="margin-bottom:0.7rem; display:flex; align-items:center; gap:0.6rem;">
+                            <span style="background:rgba(10,59,122,0.08); border-radius:8px; width:2rem; height:2rem; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <i class="fas fa-phone-alt" style="color:var(--primary-blue);"></i>
+                            </span>
+                            <a href="tel:+2348123456789" style="color:inherit; text-decoration:none;">+234 812 345 6789</a>
+                        </p>
+                        <p style="display:flex; align-items:center; gap:0.6rem;">
+                            <span style="background:rgba(10,59,122,0.08); border-radius:8px; width:2rem; height:2rem; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <i class="fas fa-envelope" style="color:var(--primary-blue);"></i>
+                            </span>
+                            <a href="mailto:info@topviewschool.edu.ng" style="color:inherit; text-decoration:none;">info@topviewschool.edu.ng</a>
+                        </p>
+                    </div>
+                    <!-- Landmark note -->
+                    <p style="font-size:0.85rem; color:var(--gray-600); margin-bottom:0.8rem; padding:0.6rem 1rem; background:rgba(10,59,122,0.05); border-radius:12px; line-height:1.5;">
+                        <i class="fas fa-info-circle" style="color:var(--primary-blue); margin-right:0.4rem;"></i>
+                        Located in <strong>Ofada</strong>, Ogun State — approx. 50 km north of Lagos along the Lagos–Ibadan Expressway corridor.
+                    </p>
+                    <div class="map-wrapper">
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.102844910846!2d3.4264087!3d6.8647350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8ea2c5555555%3A0xabcdef1234567890!2sOfada%2C%20Ogun%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Topview Private School – No 1 Grace Spring Ave, Charity Estate, Ofada, Ogun State">
+                            </iframe>
+                        </div>
+                        <div class="map-actions">
+                            <a class="map-btn map-btn-primary"
+                               href="https://www.google.com/maps/search/No+1+Grace+Spring+Avenue+Charity+Estate+Ofada+Ogun+State+Nigeria/@6.8647,3.4286,16z"
+                               target="_blank" rel="noopener">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                            <a class="map-btn map-btn-secondary"
+                               href="https://maps.apple.com/?q=Ofada,Ogun+State,Nigeria&ll=6.8647,3.4286&z=16"
+                               target="_blank" rel="noopener">
+                                <i class="fas fa-map"></i> Open in Apple Maps
+                            </a>
+                        </div>
+                    </div><!-- /.map-wrapper -->
+                </div><!-- /.contact-info -->
+                <div>
+                    <!-- Form heading -->
+                    <h3 style="margin-bottom:1.2rem; color:var(--primary-blue); display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fas fa-paper-plane"></i> Send Us a Message
+                    </h3>
+                    <form onsubmit="handleForm(event)">
+                        <div class="form-group" style="position:relative;">
+                            <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--primary-blue); pointer-events:none;">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <input type="text" placeholder="Your name" required aria-label="Your name" style="padding-left:44px;">
+                        </div>
+                        <div class="form-group" style="position:relative;">
+                            <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--primary-blue); pointer-events:none;">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <input type="email" placeholder="Email address" required aria-label="Email address" style="padding-left:44px;">
+                        </div>
+                        <div class="form-group" style="position:relative;">
+                            <span style="position:absolute; left:16px; top:16px; color:var(--primary-blue); pointer-events:none;">
+                                <i class="fas fa-comment-dots"></i>
+                            </span>
+                            <textarea rows="5" placeholder="Message" required aria-label="Message" style="padding-left:44px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="display:inline-flex; align-items:center; gap:0.5rem;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────────────── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <h3>Topview Private School</h3>
+                    <p>No 1 Grace Spring Ave Charity Est, Obafemi Owode</p>
+                    <p>Raising future leaders through excellence and integrity.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom:1rem;">Follow Us</h3>
+                    <div class="social-icons">
+                        <div class="social-item">
+                            <a href="https://www.facebook.com/profile.php?id=61579240059878" class="fb" aria-label="Facebook" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <span>Facebook</span>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/topviewschools?igsh=MWwzNG16dTc2OHpzeg==" class="ig" aria-label="Instagram" target="_blank" rel="noopener">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span>Instagram</span>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://whatsapp.com/channel/0029VbBIYeRJP213wJcf1b31" class="wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <span>WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Topview Private School. All rights reserved. | Trust · Excellence · Growth · Culture · Career · Execution</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── FLOATING SOCIAL BAR ────────────────────────── -->
+    <div class="float-social" aria-label="Social media links">
+        <a href="https://www.facebook.com/profile.php?id=61579240059878" class="fl-fb" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="fl-label">Facebook</span>
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/topviewschools?igsh=MWwzNG16dTc2OHpzeg==" class="fl-ig" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="fl-label">Instagram</span>
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://whatsapp.com/channel/0029VbBIYeRJP213wJcf1b31" class="fl-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="fl-label">WhatsApp</span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- ── SCRIPTS ─────────────────────────────────────── -->
+    <script>
+        /* ── Hamburger menu ── */
+        const menuBtn   = document.getElementById('menuBtn');
+        const menuIcon  = document.getElementById('menuIcon');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuIcon.className = 'fas fa-bars';
+            menuBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        /* Close menu when clicking outside */
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        /* ── Hero slider ── */
+        let slideIndex = 0;
+        const slides          = document.querySelectorAll('.slide');
+        const dots            = document.querySelectorAll('.dot');
+        const sliderContainer = document.getElementById('slider');
+        const progressBar     = document.getElementById('progressBar');
+        const slideCounter    = document.getElementById('slideCounter');
+        const totalSlides     = slides.length;
+        const INTERVAL        = 5000;
+        let autoTimer;
+
+        function showSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            else if (index < 0)       slideIndex = totalSlides - 1;
+            else                      slideIndex = index;
+
+            sliderContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+            slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
+            dots.forEach((d, i)   => d.classList.toggle('active', i === slideIndex));
+            slideCounter.innerHTML = `<span>${slideIndex + 1}</span> / ${totalSlides}`;
+
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                    progressBar.style.width = '100%';
+                });
+            });
+        }
+
+        function currentSlide(index) {
+            clearInterval(autoTimer);
+            showSlide(index);
+            startAuto();
+        }
+
+        function startAuto() {
+            autoTimer = setInterval(() => showSlide(slideIndex + 1), INTERVAL);
+        }
+
+        showSlide(0);
+        startAuto();
+
+        const heroSlider = document.querySelector('.hero-slider');
+        heroSlider.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        heroSlider.addEventListener('mouseleave', () => startAuto());
+
+        let touchStartX = 0;
+        sliderContainer.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        sliderContainer.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) currentSlide(slideIndex + (diff > 0 ? 1 : -1));
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft')  currentSlide(slideIndex - 1);
+            if (e.key === 'ArrowRight') currentSlide(slideIndex + 1);
+        });
+
+        /* ── Active nav link on scroll ── */
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(a => {
+                        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+        /* ── Simple form handler ── */
+        function handleForm(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been received. We will get back to you shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
